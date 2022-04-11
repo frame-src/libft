@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frmessin <frmessin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/29 17:24:16 by frmessin          #+#    #+#             */
-/*   Updated: 2022/04/11 02:37:42 by frmessin         ###   ########.fr       */
+/*   Created: 2022/04/08 17:03:38 by frmessin          #+#    #+#             */
+/*   Updated: 2022/04/11 01:27:36 by frmessin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	spaceleft;
-	size_t	lendst;
-	size_t	lensrc;
-
-	lendst = ft_strlen(dst);
-	lensrc = ft_strlen((char *)src);
-	spaceleft = dstsize - lendst - 1;
-	if (lendst >= dstsize)
-		return (dstsize + lensrc);
-	if (lensrc <= spaceleft)
+	if (n == -2147483648)
 	{
-		ft_memcpy((dst + lendst), src, lensrc + 1);
+		write(fd, "-2147483648", 11);
 	}
 	else
 	{
-		ft_memcpy((dst + lendst), src, spaceleft);
-		dst[dstsize -1] = '\0';
+		if (n < 0)
+		{
+			ft_putchar_fd('-', fd);
+			n = -1 * n;
+		}
+		if (n != 0)
+		{
+			ft_putchar_fd(n % 10, fd);
+			ft_putnbr_fd(n / 10, fd);
+		}
 	}
-	return (lendst + lensrc);
 }

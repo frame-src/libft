@@ -6,7 +6,7 @@
 /*   By: frmessin <frmessin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 15:18:11 by frmessin          #+#    #+#             */
-/*   Updated: 2022/03/30 17:27:49 by frmessin         ###   ########.fr       */
+/*   Updated: 2022/04/11 02:54:57 by frmessin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,19 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t i;
+	char		*d;
+	const char	*s;
 
-	i = 0;
-	while (i < n)
+	s = (const char *)src;
+	d = (char *)dst;
+	if (!src && !dst)
+		return (NULL);
+	while (n)
 	{
-		*(char*)dst = *(const char*)src;
-		i++;
-		dst++;
-		src++;
+		*d = *s;
+		n--;
+		d++;
+		s++;
 	}
 	return (dst);
 }

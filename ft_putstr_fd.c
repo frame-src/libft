@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frmessin <frmessin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/25 11:07:49 by frmessin          #+#    #+#             */
-/*   Updated: 2022/04/11 01:32:10 by frmessin         ###   ########.fr       */
+/*   Created: 2022/04/08 16:44:14 by frmessin          #+#    #+#             */
+/*   Updated: 2022/04/11 02:45:48 by frmessin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	return ((c >= 0) && (c <= 127));
+	size_t	len;
+
+	len = ft_strlen(s);
+	write(fd, s, len);
 }

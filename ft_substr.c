@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frmessin <frmessin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/25 11:07:49 by frmessin          #+#    #+#             */
-/*   Updated: 2022/04/11 01:32:10 by frmessin         ###   ########.fr       */
+/*   Created: 2022/04/03 22:21:37 by frmessin          #+#    #+#             */
+/*   Updated: 2022/04/11 07:17:03 by frmessin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_isascii(int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+
 {
-	return ((c >= 0) && (c <= 127));
+	char	*rstr;
+	int		i;
+
+	i = 0;
+	if (start >= ft_strlen(s))
+	{
+		rstr = ft_calloc (sizeof(char), 1);
+		return (rstr);
+	}
+	if (!s)
+		return (NULL);
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
+	rstr = (char *)malloc((len + 1) * sizeof(char));
+	if (!rstr)
+		return (NULL);
+	ft_strlcpy(rstr, s + start, len + 1);
+	return (rstr);
 }

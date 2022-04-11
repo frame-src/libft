@@ -6,29 +6,44 @@
 /*   By: frmessin <frmessin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 10:56:36 by frmessin          #+#    #+#             */
-/*   Updated: 2022/03/29 20:31:49 by frmessin         ###   ########.fr       */
+/*   Updated: 2022/04/11 02:59:48 by frmessin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 #include <stdlib.h>
-int	ft_atoi(const char *str)
-{
-	int	r;
-	int	n;
+#include <stdio.h>
+#include <ctype.h>
 
-	r = 0;
-	while (*str)
-	{
-		n = *str - '0';
-		r = (r * 10) + n;
-		str ++;
-	}
-	return (r);
+static int	ft_isspace(const char p)
+{
+	if (((p >= '\t' && p <= '\r' ) || p == ' ') && p != '\0')
+		return (1);
+	else
+		return (0);
 }
 
-int main (void)
+int	ft_atoi(const char *str)
 {
-	printf("%d",atoi("   -348923447934234fefqjgw"));
-		return (0);
+	int		rval;
+	int		sign;
+
+	sign = 1;
+	rval = 0;
+	while (ft_isspace(*str))
+	{
+		str++;
+	}
+	if ((*str == '-') || (*str == '+'))
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	while (ft_isdigit(*str))
+	{
+		rval = (rval * 10) + (*str - '0');
+		str++;
+	}
+	return (sign * rval);
 }

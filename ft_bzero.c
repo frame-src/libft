@@ -6,7 +6,7 @@
 /*   By: frmessin <frmessin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 12:17:55 by frmessin          #+#    #+#             */
-/*   Updated: 2022/03/30 17:27:16 by frmessin         ###   ########.fr       */
+/*   Updated: 2022/04/11 01:29:14 by frmessin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
+	size_t	index;
 
-	i = 0;
+	index = 0;
 	if (n == 0)
 		return ;
-	while (i < n)
+	while (index < n)
 	{
-		*(char *)(s + i) = '\0';
-		i++;
+		*(char *)(s + index) = '\0';
+		index++;
 	}
 }
 

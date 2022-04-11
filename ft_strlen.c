@@ -6,20 +6,20 @@
 /*   By: frmessin <frmessin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 15:21:59 by frmessin          #+#    #+#             */
-/*   Updated: 2022/03/30 17:28:23 by frmessin         ###   ########.fr       */
+/*   Updated: 2022/04/10 21:44:05 by frmessin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *a)
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (*a)
+	while (*s)
 	{
-		a++;
+		s++;
 		i++;
 	}
 	return (i);

@@ -6,7 +6,7 @@
 /*   By: frmessin <frmessin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 16:14:44 by frmessin          #+#    #+#             */
-/*   Updated: 2022/03/30 17:28:31 by frmessin         ###   ########.fr       */
+/*   Updated: 2022/04/11 03:17:34 by frmessin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		len;
+	size_t	len;
 	char	*v;
 
-	len = strlen(s);
+	len = ft_strlen((char *)s);
 	while (len >= 0)
 	{
-		if (s[len] == c)
+		if (s[len] == (char)c)
 		{
-			v = s + (len +1);
+			v = (char *)s + (len);
 			return (v);
 		}
-		len = len - 1;
+		if (len == 0)
+			break ;
+		len--;
 	}
 	return (NULL);
 }
