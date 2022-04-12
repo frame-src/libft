@@ -6,12 +6,11 @@
 /*   By: frmessin <frmessin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 17:57:30 by frmessin          #+#    #+#             */
-/*   Updated: 2022/04/11 07:35:44 by frmessin         ###   ########.fr       */
+/*   Updated: 2022/04/13 00:30:29 by frmessin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int	ft_in(char const a, char const *val)
 {

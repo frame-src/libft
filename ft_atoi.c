@@ -6,14 +6,11 @@
 /*   By: frmessin <frmessin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 10:56:36 by frmessin          #+#    #+#             */
-/*   Updated: 2022/04/11 02:59:48 by frmessin         ###   ########.fr       */
+/*   Updated: 2022/04/12 21:16:33 by frmessin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <ctype.h>
 
 static int	ft_isspace(const char p)
 {

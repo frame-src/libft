@@ -6,7 +6,7 @@
 /*   By: frmessin <frmessin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 17:26:43 by frmessin          #+#    #+#             */
-/*   Updated: 2022/04/11 07:11:40 by frmessin         ###   ########.fr       */
+/*   Updated: 2022/04/12 12:58:27 by frmessin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return ((char *)haystack);
 	while (len > 0)
 	{
+		if (needle[0] == '\0')
+			return ((char *)haystack);
 		a = 0;
 		while (needle[a] == haystack[i + a])
 		{

@@ -6,12 +6,11 @@
 /*   By: frmessin <frmessin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 22:33:07 by frmessin          #+#    #+#             */
-/*   Updated: 2022/04/11 07:02:52 by frmessin         ###   ########.fr       */
+/*   Updated: 2022/04/13 00:30:06 by frmessin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int	ft_size(long int n)
 {
