@@ -6,7 +6,7 @@
 /*   By: frmessin <frmessin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 17:57:30 by frmessin          #+#    #+#             */
-/*   Updated: 2022/04/13 00:30:29 by frmessin         ###   ########.fr       */
+/*   Updated: 2022/04/16 17:00:34 by frmessin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	char	*rtn;
 
+	if (!s1)
+		return (NULL);
 	start = ft_setstart (s1, set);
 	end = ft_setend (s1, set, start);
 	rtn = malloc(sizeof(char) * (ft_strlen(s1) - start - end + 1));

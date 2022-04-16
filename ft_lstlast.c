@@ -6,20 +6,20 @@
 /*   By: frmessin <frmessin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 21:44:00 by frmessin          #+#    #+#             */
-/*   Updated: 2022/04/13 01:00:06 by frmessin         ###   ########.fr       */
+/*   Updated: 2022/04/15 12:38:47 by frmessin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 
 {
-	while(lst)
+	while (lst)
 	{
-		if(!lst->next)
+		if (!lst->next)
 			return (lst);
 		lst = lst->next;
 	}
-	return lst;
+	return (lst);
 }
